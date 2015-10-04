@@ -6,7 +6,6 @@ const PORT = 502
 const UNIT_ID = 1
 const REF_ADDR = 0
 const NUM_REGS = 2
-const SLEEP_TIME = 1
 const TIMEOUT_SEC = 0
 const TIMEOUT_USEC = 750000
 
@@ -33,7 +32,7 @@ function main()
     ctx = connect()
 
     animated_plot = AnimatedGraph(x -> get_register_values(ctx)[1])
-    animated_plot.speed = 3
+    animated_plot.speed = 10
     plot(animated_plot)
     follow(animated_plot)
     #disconnect(ctx)
